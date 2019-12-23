@@ -34,7 +34,7 @@ function CustomersList(props) {
                                     <td>{ customer.name }</td>
                                     <td>{ customer.email }</td>
                                     <td>{ customer.mobile }</td>
-                                    <td><Link to="/customers/:id" className="btn btn-primary">Show</Link></td>
+                                    <td><Link to={`/customers/show/${customer._id}`} className="btn btn-primary">Show</Link></td>
                                     <td><Link to={`/customers/${customer._id}`} className="btn btn-secondary">Edit</Link></td>
                                     <td><button className="btn btn-danger" onClick={ () => {
                                         handleRemove(customer._id)

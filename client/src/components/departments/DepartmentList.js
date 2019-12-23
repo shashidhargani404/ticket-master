@@ -11,7 +11,7 @@ function DepartmentList(props) {
     }
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{width: '50rem'}}>
             <h2>Departments - {props.departments.length} </h2>
             <table className="table">
                 <thead>
@@ -30,7 +30,7 @@ function DepartmentList(props) {
                                 <tr key={department._id}>
                                     <th scope="row">{ index + 1 }</th>
                                     <td>{ department.name }</td>
-                                    <td><Link to="/departments/:id" className="btn btn-primary">Show</Link></td>
+                                    <td><Link to={`/departments/show/${department._id}`} className="btn btn-primary">Show</Link></td>
                                     <td><Link to={`/departments/${department._id}`} className="btn btn-secondary">Edit</Link></td>
                                     <td><button className="btn btn-danger" onClick={ () => {
                                         handleRemove(department._id)

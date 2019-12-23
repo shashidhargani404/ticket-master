@@ -17,9 +17,10 @@ module.exports.login = (req,res) => {
     const { email, password } = req.body
     User.findByCredentials(email,password)
         .then((user) => {
+            const userInfo = _.pick(user, ['username', 'email'])
             user.generateToken()
                 .then((token) => {
-                    res.send({token})
+                    res.send({userInfo, token})
                 })
                 .catch((err) => {
                     res.send(err)

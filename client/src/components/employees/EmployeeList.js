@@ -36,7 +36,7 @@ function EmployeeList(props) {
                                     <td>{ employee.email }</td>
                                     <td>{ employee.mobile }</td>
                                     <td>{ employee.department && employee.department.name }</td>
-                                    <td><Link to="/employees/:id" className="btn btn-primary">Show</Link></td>
+                                    <td><Link to={`/employees/show/${employee._id}`} className="btn btn-primary">Show</Link></td>
                                     <td><Link to={`/employees/${employee._id}`} className="btn btn-secondary">Edit</Link></td>
                                     <td><button className="btn btn-danger" onClick={ () => {
                                         handleRemove(employee._id)

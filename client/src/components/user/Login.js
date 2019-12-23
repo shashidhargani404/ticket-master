@@ -29,13 +29,11 @@ class Login extends React.Component {
                 <form className="form-signin mt-5" onSubmit={this.handleSubmit}>
                     
                     <h1 className="h1 mb-3 font-weight-normal text-center">Login</h1>
-
-                    <label htmlFor="email" className="sr-only">Email</label>
-                    <input type="text" id="email" className="form-control mb-3" placeholder="Email"  name="email" value={this.state.email} onChange={this.handleChange}/>
-
-                    <label htmlFor="password" className="sr-only">Password</label>
-                    <input type="password" id="password" className="form-control mb-3" placeholder="password"  name="password" value={this.state.password} onChange={this.handleChange}/>
-
+                    
+                    <input type="text" className="form-control mb-3" placeholder="Email"  name="email" value={this.state.email} onChange={this.handleChange}/>
+                    
+                    <input type="password" className="form-control mb-3" placeholder="password"  name="password" value={this.state.password} onChange={this.handleChange}/>
+                    
                     <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                 </form>
             </div>

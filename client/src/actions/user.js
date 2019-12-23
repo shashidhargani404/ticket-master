@@ -3,6 +3,10 @@ import { startSetCustomers } from './customers'
 import { startSetDepartments } from './department'
 import { startSetEmployees } from './employee'
 import { startSetTickets } from './ticket'
+import { setCustomers } from './customers'
+import { setDepartments } from './department'
+import { setEmployees } from './employee'
+import { setTickets } from './ticket'
 
 export const setUser = (user) => {
     return {
@@ -32,7 +36,7 @@ export const startSetUser = () => {
                     dispatch(startSetTickets())
                 }
             })
-            .catch((err) => {
+            .catch(() => {
                 window.alert('Please login...')
                 localStorage.clear('x-auth')
                 window.location.href = '/user/login'
@@ -44,11 +48,10 @@ export const startLoginUser = (formData, props) => {
     return (dispatch) => {
         axios.post('/user/login', formData)
             .then((response) => {
-                console.log(response)
-                const { userInfo, token } = response.data
+                const { token } = response.data
                 if(token){
                     localStorage.setItem('x-auth', token)
-                    dispatch(setUser(userInfo))
+                    dispatch(startSetUser())
                     props.history.push('/')
                 } else {
                     window.alert(response.data)
@@ -91,6 +94,10 @@ export const startRemoveUser = () => {
                 window.alert(response.data)
                 localStorage.clear('x-uath')
                 dispatch(setUser({}))
+                dispatch(setCustomers([{}]))
+                dispatch(setDepartments([{}]))
+                dispatch(setEmployees([{}]))
+                dispatch(setTickets([{}]))
             })
             .catch((err) => {
                 window.alert(err)

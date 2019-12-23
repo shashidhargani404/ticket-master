@@ -8,15 +8,19 @@ import Login from './components/user/Login'
 import Register from './components/user/Register'
 import { startRemoveUser } from './actions/user'
 import CustomersList from './components/customers/CustomersList'
+import CustomerShow from './components/customers/CustomerShow'
 import CustomerNew from './components/customers/CustomerNew'
 import CustomerEdit from './components/customers/CustomerEdit'
 import DepartmentList from './components/departments/DepartmentList'
+import DepartmentShow from './components/departments/DepartmentShow'
 import DepartmentNew from './components/departments/DepartmentNew'
 import DepartmentEdit from './components/departments/DepartmentEdit'
 import EmployeeList from './components/employees/EmployeeList'
+import EmployeeShow from './components/employees/EmployeeShow'
 import EmployeeNew from './components/employees/EmployeeNew'
 import EmployeeEdit from './components/employees/EmployeeEdit'
 import TicketList from './components/tickets/TicketList'
+import TicketShow from './components/tickets/TicketShow'
 import TicketNew from './components/tickets/TicketNew'
 import TicketEdit from './components/tickets/TicketEdit'
 
@@ -75,15 +79,19 @@ function App(props) {
         <Route path="/user/register" component={Register} />
         <Route path="/customers" component={CustomersList} exact={true} />
         <Route path="/customers/new" component={CustomerNew} />
+        <Route path="/customers/show/:id" component={CustomerShow} />
         <Route path="/customers/:id" component={CustomerEdit} />
         <Route path="/departments" component={DepartmentList} exact={true} />
         <Route path="/departments/new" component={DepartmentNew} />
+        <Route path="/departments/show/:id" component={DepartmentShow} />
         <Route path="/departments/:id" component={DepartmentEdit} />
         <Route path="/employees" component={EmployeeList} exact={true} />
         <Route path="/employees/new" component={EmployeeNew} />
+        <Route path="/employees/show/:id" component={EmployeeShow} />
         <Route path="/employees/:id" component={EmployeeEdit} />
         <Route path="/tickets" component={TicketList} exact={true} />
         <Route path="/tickets/new" component={TicketNew} />
+        <Route path="/tickets/show/:id" component={TicketShow} />
         <Route path="/tickets/:id" component={TicketEdit} />
       </Switch>
     </BrowserRouter>

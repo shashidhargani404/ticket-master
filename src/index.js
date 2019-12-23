@@ -1,22 +1,18 @@
 const express = require('express')
 const app = express()
-// const port = process.env.PORT || 3000;
-const port = 3020
-
-const path = require('path')
-const cors = require('cors')
+const port = 3030
 
 const router = require('./config/routes')
+const cors = require('cors')
 const configureDB = require('./config/database')
 configureDB()
 
 app.use(cors())
 app.use(express.json())
 
-// app.use(express.static(path.join(__dirname,"client/build"))) 
-// app.get("*",(req,res) => { 
-//     res.sendFile(path.join(__dirname + "/client/build/index.html")) 
-// }) 
+app.get('/', (req,res) => {
+    res.send('Welcome to the ticket-master')
+})
 
 app.use('/', router)
 

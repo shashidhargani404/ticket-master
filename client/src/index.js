@@ -13,8 +13,6 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 
-console.log(store.getState())
-
 localStorage.getItem('x-auth') && (
     store.dispatch(startSetUser())
 )

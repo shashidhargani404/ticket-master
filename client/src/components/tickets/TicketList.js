@@ -39,7 +39,7 @@ function TicketList(props) {
                                     <td>{ ticket.employee ? ticket.employee.name : 'NA' }</td>
                                     <td>{ ticket.message }</td>
                                     <td>{ ticket.priority }</td>
-                                    <td><Link to="/tickets/:id" className="btn btn-primary">Show</Link></td>
+                                    <td><Link to={`/tickets/show/${ticket._id}`} className="btn btn-primary">Show</Link></td>
                                     <td><Link to={`/tickets/${ticket._id}`} className="btn btn-secondary">Edit</Link></td>
                                     <td><button className="btn btn-danger" onClick={ () => {
                                         handleRemove(ticket._id)

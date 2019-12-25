@@ -3,17 +3,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ticketSchema = new Schema({
     customer: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
         ref: 'Customer'
     },
     department: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
         ref: 'Department'
     },
     employee: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
         ref: 'Employee'
     },
